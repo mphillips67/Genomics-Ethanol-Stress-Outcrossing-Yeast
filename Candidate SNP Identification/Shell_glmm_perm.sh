@@ -8,3 +8,5 @@ SGE_Batch -c 'Rscript High_Control_GLMM_perms.R $SGE_TASK_ID' -t 1-200 -b 20 -r 
 SGE_Batch -c 'Rscript High_Moderate_GLMM_perms.R $SGE_TASK_ID' -t 1-200 -b 20 -r HM_GLMM -q beagle -m 1.5G - f 1.5G
 
 SGE_Batch -c 'Rscript Moderate_Control_GLMM_perms.R $SGE_TASK_ID' -t 1-200 -b 20 -r MC_GLMM -q beagle -m 1.5G - f 1.5G
+
+#one array jobs are done, cat sets of outputs into a single file. 
