@@ -1,1 +1,2 @@
 
+Here are the scripts used to peform CMH and GLMM analyses. The CMH tests was used for within treatment comparisons (e.g. C replicates cycle 1 versus cycle 15), while the GLMM approach was used for between treatment comparisons (e.g. C replicates vs. H replicates). Also, included are scripts to run the permutations used to establish significance thresholds. 
