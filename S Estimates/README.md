@@ -1,0 +1,1 @@
+Scripts used to estimate selection coefficents based on changes in SNP frequneces over time in each treatment group. Ne estiamtes were made using the pool-seq package in R (https://github.com/ThomasTaus/poolSeq) and S estiamtes using the Bait-ER software package (https://github.com/mrborges23/Bait-ER).
