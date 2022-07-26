@@ -1,6 +1,5 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/Ne_S")
 
-data <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/Prep_quality_checks/SNPtable_raw.txt", header = TRUE)
+data <- read.table("SNPtable_raw.txt", header = TRUE)
 
 #identify high coverage sites
 snpmax <- apply(data[,c(seq(6,ncol(data),by=2))],1,max)
@@ -210,17 +209,3 @@ for (j in seq(5,ncol(highs),by = 2)){
   names(high_sync)[d] <- colnames(highs)[t]
 }
 write.table (high_sync,file="High_eth_BaitER.sync",quote=FALSE,row.names = FALSE, col.names = TRUE, sep = "\t")
-
-
-
-#create pop file for CLEAR
-Y <- c(1,7,15) * 15
-X <- rep(c(1:20),each =3)
-pop_list <- paste(Y, ",", X, sep="")
-ancestor_pops <- paste(rep(0,20), ",", 1:20, sep="")
-pop_file <- c(ancestor_pops,pop_list)
-pop_file <- rbind(pop_file)
-
-write.table (pop_file,file="High_eth_w_ancestor.sync.pops",quote=FALSE,row.names = FALSE, col.names = FALSE, sep = "\t")
-write.table (pop_file,file="Mod_eth_w_ancestor.sync.pops",quote=FALSE,row.names = FALSE, col.names = FALSE, sep = "\t")
-write.table (pop_file,file="Controls_ypd_w_ancestor.sync.pops",quote=FALSE,row.names = FALSE, col.names = FALSE, sep = "\t")
