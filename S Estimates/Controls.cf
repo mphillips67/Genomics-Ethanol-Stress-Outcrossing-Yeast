@@ -1,0 +1,10 @@
+Sync_file	Controls_ypd_BaitER.sync
+Header	1
+Columns_order	0
+Number_replicates	20
+Time_points	0,15,105,225
+Number_loci	61277
+Population_size	350
+Sampling_correction 0
+Prior_parameters 0.001,0.001
+Output_file	Control_BaitER_results.txt
