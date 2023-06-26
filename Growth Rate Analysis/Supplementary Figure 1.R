@@ -1,4 +1,4 @@
-setwd("~/Dropbox/Ethanol expression project/Growth_rate_data/Generation_0/")
+
 library(ggplot2)
 library(reshape2)
 library("matrixStats")
