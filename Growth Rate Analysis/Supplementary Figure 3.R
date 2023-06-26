@@ -1,4 +1,4 @@
-setwd("~/Dropbox/Ethanol expression project/Growth_rate_data/Cycle 15 Round 2/")
+
 library(ggplot2)
 library(reshape2)
 library("matrixStats")
