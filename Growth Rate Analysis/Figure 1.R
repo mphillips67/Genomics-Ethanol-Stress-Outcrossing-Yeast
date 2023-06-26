@@ -1,4 +1,3 @@
-setwd("~/Dropbox/Ethanol expression project/Growth_rate_data/Cycle 15 Round 2/")
 library(ggplot2)
 library(reshape2)
 library(gridExtra)
@@ -39,7 +38,6 @@ b <- ggplot(data3, aes(x=Treatment, y=DD, fill=Treatment)) +
 
 
 #moderate
-setwd("~/Dropbox/Ethanol expression project/Growth_rate_data/Cycle 15 Round 2/")
 library(ggplot2)
 library(reshape2)
 library("matrixStats")
@@ -86,7 +84,6 @@ d <- ggplot(data3, aes(x=Treatment, y=DD, fill=Treatment)) +
                                                                                                                                                                                    axis.title=element_text(size=10,face="bold")) + theme(legend.title = element_text(size=15, face="bold")) + theme(legend.position="none")
 
 #high
-setwd("~/Dropbox/Ethanol expression project/Growth_rate_data/Cycle 15 Round 2/")
 library(ggplot2)
 library(reshape2)
 library("matrixStats")
