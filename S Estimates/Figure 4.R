@@ -1,4 +1,5 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/Ne_S/Bait-ER")
+#requires category plots - see candidate SNP idenetification directory for how to generate these
+
 library(gridExtra)
 library(ggpubr)
 library(reshape2)
@@ -14,11 +15,11 @@ data <- data.frame(control[,1:4], mod$sigma, high$sigma)
 names(data) <- c("CHR", "BP", "REF", "Control","Moderate", "High")
 
 #read in category lists
-general_lab  <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Outcrossing Snps/Sig_SNPs_Outcrossing.txt", header =TRUE,col.names = c("CHR","BP"))
-general_eth <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Ethanol SNPs/Sig_SNPs_Shared_High_Mod_Overlap.txt", header =TRUE,col.names = c("CHR","BP"))
-high_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Ethanol SNPs/High_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
-mod_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Ethanol SNPs/Mod_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
-con_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Ethanol SNPs/Control_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
+general_lab  <- read.table("Sig_SNPs_Outcrossing.txt", header =TRUE,col.names = c("CHR","BP"))
+general_eth <- read.table("Sig_SNPs_Shared_High_Mod_Overlap.txt", header =TRUE,col.names = c("CHR","BP"))
+high_only <- read.table("High_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
+mod_only <- read.table("Mod_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
+con_only <- read.table("Control_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
 
 #genome wide s r2 plot
 a <- ggcorrplot(corr_all^2, method = "square", outline.col = "white", lab = TRUE, type = "lower",
