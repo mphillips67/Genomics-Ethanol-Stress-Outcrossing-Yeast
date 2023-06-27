@@ -15,13 +15,12 @@ data <- data.frame(control[,1:4], mod$sigma, high$sigma)
 names(data) <- c("CHR", "BP", "REF", "Control","Moderate", "High")
 
 #read in category lists
-general_lab  <- read.table("Sig_SNPs_Outcrossing.txt", header =TRUE,col.names = c("CHR","BP"))
-general_eth <- read.table("Sig_SNPs_Shared_High_Mod_Overlap.txt", header =TRUE,col.names = c("CHR","BP"))
 high_only <- read.table("High_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
 mod_only <- read.table("Mod_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
 con_only <- read.table("Control_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
 
 #genome wide s r2 plot
+corr_all <- cor(data[,4:6], use = "complete.obs", method = "pearson")
 a <- ggcorrplot(corr_all^2, method = "square", outline.col = "white", lab = TRUE, type = "lower",
                 title = expression("A. Genome-wide " ~ italic(s))) +
   scale_fill_gradient(low = "white", high = "#E46726", limits = c(0, 1)) +
