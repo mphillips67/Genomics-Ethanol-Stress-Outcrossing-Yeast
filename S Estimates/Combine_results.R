@@ -1,4 +1,4 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/Ne_S/Bait-ER")
+#combine S estimates into one file
 
 #read in results
 control <- read.table("Control_BaitER_results.txt", header = TRUE)
