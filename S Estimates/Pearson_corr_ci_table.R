@@ -1,5 +1,6 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/Ne_S/Bait-ER")
+#make table with 95 CI and SNP counts for correlations between top candidates for each category. requires cmh files, s estimate files, and category files. 
 library(dplyr)
+
 #read in results and make S table
 control_s <- read.table("Control_BaitER_results.txt", header = TRUE)
 mod_s <- read.table("Moderate_BaitER_results.txt", header = TRUE)
@@ -9,16 +10,16 @@ names(data) <- c("CHR", "BP", "REF", "C-populations","M-populations", "H-populat
 
 
 #read in cmh results
-high_ethanol_cmh <- read.table('~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/CMH/CMH_Results_High_1v15.txt', header = TRUE, col.names = c("CHR","BP","P"))
-mod_ethanol_cmh <- read.table('~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/CMH/CMH_Results_Moderate_1v15.txt', header = TRUE, col.names = c("CHR","BP","P"))
-control_cmh <- read.table('~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/CMH/CMH_Results_Controls_1v15.txt', header = TRUE, col.names = c("CHR","BP","P"))
+high_ethanol_cmh <- read.table('CMH_Results_High_1v15.txt', header = TRUE, col.names = c("CHR","BP","P"))
+mod_ethanol_cmh <- read.table('CMH_Results_Moderate_1v15.txt', header = TRUE, col.names = c("CHR","BP","P"))
+control_cmh <- read.table('CMH_Results_Controls_1v15.txt', header = TRUE, col.names = c("CHR","BP","P"))
 
 #read in category lists
-high_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Ethanol SNPs/High_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
-mod_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Ethanol SNPs/Mod_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
-control_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Ethanol SNPs/Control_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
-general_lab  <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Outcrossing Snps/Sig_SNPs_Outcrossing.txt", header =TRUE,col.names = c("CHR","BP"))
-general_eth <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Ethanol SNPs/Sig_SNPs_Shared_High_Mod_Overlap.txt", header =TRUE,col.names = c("CHR","BP"))
+high_only <- read.table("High_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
+mod_only <- read.table("Mod_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
+control_only <- read.table("Control_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
+general_lab  <- read.table("Sig_SNPs_Outcrossing.txt", header =TRUE,col.names = c("CHR","BP"))
+general_eth <- read.table("Sig_SNPs_Shared_High_Mod_Overlap.txt", header =TRUE,col.names = c("CHR","BP"))
 
 #All_Sites 
 All_Sites <- data[,4:6]
