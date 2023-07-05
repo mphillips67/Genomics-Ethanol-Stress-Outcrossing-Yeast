@@ -1,3 +1,4 @@
+#requires cmh, s, and category files. makes plots showing s estimate correlations between groups of experimental populations for top candiates in each response category. top candidates defined as sites within 5KB window around most singificant marker for largeest peak on each chromsome across the genome. 
 
 library(gridExtra)
 library(ggpubr)
