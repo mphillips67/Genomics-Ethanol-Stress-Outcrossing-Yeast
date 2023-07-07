@@ -61,7 +61,7 @@ my_comparisons <- list(c("High Ethanol", "Moderate Ethanol"), c("Control", "High
 
 a <- ggplot(data_frame, aes(x=Treatment, y=delta_maf, fill=Treatment)) +
   ylab('Change in SNP Frequency') + 
-  geom_boxplot() +  stat_compare_means(comparisons = my_comparisons, method="t.test", label = "p.signif", size=3, vjust=0.9)  + scale_fill_manual(breaks=c("Control", "Moderate Ethanol", "High Ethanol"), values =c("#4daf4a","#ff7f00","#e41a1c")) +  stat_compare_means(label.y = 0.05, label.x =2, size=5) +  ylim(0,.58) + ggtitle("A.  General Lab Selection Candidates") + theme_grey(base_size = 12) + theme(legend.position="none")
+  geom_boxplot() +  stat_compare_means(comparisons = my_comparisons, method="wilcox.test", label = "p.signif", size=3, vjust=0.9)  + scale_fill_manual(breaks=c("Control", "Moderate Ethanol", "High Ethanol"), values =c("#4daf4a","#ff7f00","#e41a1c")) +  stat_compare_means(label.y = 0.05, label.x =2, size=5) +  ylim(0,.58) + ggtitle("A.  General Lab Selection Candidates") + theme_grey(base_size = 12) + theme(legend.position="none")
 
 
 #ethanol candidate plots 
@@ -102,7 +102,7 @@ my_comparisons <- list(c("High Ethanol", "Moderate Ethanol"), c("Control", "High
 
 c <- ggplot(data_frame, aes(x=Treatment, y=delta_maf, fill=Treatment)) +
   ylab('Change in SNP Frequency') + 
-  geom_boxplot()  +  stat_compare_means(comparisons = my_comparisons, method="t.test", label = "p.signif", size=3, vjust=0.9)  + scale_fill_manual(breaks=c("Control", "Moderate Ethanol", "High Ethanol"), values =c("#4daf4a","#ff7f00","#e41a1c")) +  stat_compare_means(label.y = 0.05, label.x =2, size=5) +  ylim(0,.58) + ggtitle("C. General Ethanol Selection and High Ethanol Specifc Candidates") + theme_grey(base_size = 12) + theme(legend.position="none")
+  geom_boxplot()  +  stat_compare_means(comparisons = my_comparisons, method="wilcox.test", label = "p.signif", size=3, vjust=0.9)  + scale_fill_manual(breaks=c("Control", "Moderate Ethanol", "High Ethanol"), values =c("#4daf4a","#ff7f00","#e41a1c")) +  stat_compare_means(label.y = 0.05, label.x =2, size=5) +  ylim(0,.58) + ggtitle("C. General Ethanol Selection and High Ethanol Specifc Candidates") + theme_grey(base_size = 12) + theme(legend.position="none")
 
 
 #moderate specific candidates
@@ -143,7 +143,7 @@ my_comparisons <- list(c("High Ethanol", "Moderate Ethanol"), c("Control", "High
 
 d <- ggplot(data_frame, aes(x=Treatment, y=delta_maf, fill=Treatment)) +
   ylab('Change in SNP Frequency') + 
-  geom_boxplot()  +  stat_compare_means(comparisons = my_comparisons, method="t.test", label = "p.signif",size=3, vjust=1.1)  + scale_fill_manual(breaks=c("Control", "Moderate Ethanol", "High Ethanol"), values =c("#4daf4a","#ff7f00","#e41a1c")) + stat_compare_means(label.y = 0.05, label.x =2, size=5) +  ylim(0,.58) + ggtitle("D. Moderate Ethanol Specific Candidates") + theme_grey(base_size = 12) + theme(legend.position="none")
+  geom_boxplot()  +  stat_compare_means(comparisons = my_comparisons, method="wilcox.test", label = "p.signif",size=3, vjust=1.1)  + scale_fill_manual(breaks=c("Control", "Moderate Ethanol", "High Ethanol"), values =c("#4daf4a","#ff7f00","#e41a1c")) + stat_compare_means(label.y = 0.05, label.x =2, size=5) +  ylim(0,.58) + ggtitle("D. Moderate Ethanol Specific Candidates") + theme_grey(base_size = 12) + theme(legend.position="none")
 
 
 #control specific plots
@@ -184,7 +184,7 @@ my_comparisons <- list(c("High Ethanol", "Moderate Ethanol"), c("Control", "High
 
 b <- ggplot(data_frame, aes(x=Treatment, y=delta_maf, fill=Treatment)) +
   ylab('Change in SNP Frequency') + 
-  geom_boxplot()  +  stat_compare_means(comparisons = my_comparisons, method="t.test", label = "p.signif",size=3, vjust=1.1)  + scale_fill_manual(breaks=c("Control", "Moderate Ethanol", "High Ethanol"), values =c("#4daf4a","#ff7f00","#e41a1c")) + stat_compare_means(label.y = 0.05, label.x =2, size=5) +  ylim(0,.58) + ggtitle("B. Control Treatment Specific Candidates") + theme_grey(base_size = 12) + theme(legend.position="none")
+  geom_boxplot()  +  stat_compare_means(comparisons = my_comparisons, method="wilcox.test", label = "p.signif",size=3, vjust=1.1)  + scale_fill_manual(breaks=c("Control", "Moderate Ethanol", "High Ethanol"), values =c("#4daf4a","#ff7f00","#e41a1c")) + stat_compare_means(label.y = 0.05, label.x =2, size=5) +  ylim(0,.58) + ggtitle("B. Control Treatment Specific Candidates") + theme_grey(base_size = 12) + theme(legend.position="none")
 
 
 library(gridExtra)
