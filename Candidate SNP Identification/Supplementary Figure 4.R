@@ -1,5 +1,3 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH")
-
 library(gridExtra)
 library(ggman)
 library(ggpubr)
