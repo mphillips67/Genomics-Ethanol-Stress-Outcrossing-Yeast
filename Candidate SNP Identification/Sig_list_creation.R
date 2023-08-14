@@ -1,4 +1,3 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH")
 
 #define sig thresholds for all plots for all lits
 alpha_threshold <- 0.005
