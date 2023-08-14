@@ -1,9 +1,9 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH")
+
 library(ACER)
 library(poolSeq)
 
 #read in SNP table
-data <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/Prep_quality_checks/SNPtable_raw.txt", header = TRUE)
+data <- read.table("SNPtable_raw.txt", header = TRUE)
 
 #time points and reps
 control <-c(paste("0",1:9,sep=""),10,12:21)
