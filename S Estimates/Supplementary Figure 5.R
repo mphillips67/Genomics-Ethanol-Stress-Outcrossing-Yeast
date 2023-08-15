@@ -1,4 +1,4 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/Ne_S/Bait-ER")
+
 library(ggman)
 
 #read in results and prep for plotting 
