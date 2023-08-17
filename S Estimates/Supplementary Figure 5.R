@@ -1,4 +1,3 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/Ne_S/Bait-ER")
 library(cowplot)
 library(ggpubr)
 library(reshape2)
@@ -17,13 +16,12 @@ names(data) <- c("CHR", "BP", "REF", "C-populations","M-populations", "H-populat
 
 
 #read in category lists
-high_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/High_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
-mod_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/Mod_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
-control_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/Control_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
-general_lab  <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/Sig_SNPs_Outcrossing.txt", header =TRUE,col.names = c("CHR","BP"))
-general_eth <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/Sig_SNPs_Shared_High_Mod_Overlap.txt", header =TRUE,col.names = c("CHR","BP"))
-high_control_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/High_Control_shared_snps.txt", header =TRUE,col.names = c("CHR","BP"))
-mod_control_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/Mod_Control_shared_snps.txt", header =TRUE,col.names = c("CHR","BP"))
+high_only <- read.table("High_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
+mod_only <- read.table("Mod_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
+control_only <- read.table("Control_only_sig_snps.txt", header =TRUE,col.names = c("CHR","BP"))
+general_lab  <- read.table("Sig_SNPs_Outcrossing.txt", header =TRUE,col.names = c("CHR","BP"))
+general_eth <- read.table("Sig_SNPs_Shared_High_Mod_Overlap.txt", header =TRUE,col.names = c("CHR","BP"))
+
 
 
 #genome wide s r2 plot
@@ -48,7 +46,7 @@ d <- ggpairs(high, title = "D. High Ethanol Specific Candidates")
 moderate <- na.omit(merge(data, mod_only))[,4:6]
 e <- ggpairs(moderate, title = "E. Moderate Ethanol Specific Candidates")
 
-#control
+#control specific
 control <- na.omit(merge(data, control_only))[,4:6]
 f <- ggpairs(control, title = "F. Control Specific Candidates")
 
