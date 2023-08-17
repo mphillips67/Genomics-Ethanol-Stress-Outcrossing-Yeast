@@ -1,7 +1,7 @@
 #script to generate average Ne estimates for each treatment. 
 library(poolSeq)
 
-data <- read.table("NPtable_raw.txt", header = TRUE)
+data <- read.table("SNPtable_raw.txt", header = TRUE)
 
 #ancestor data
 anc_freq <- data$alt_ETH_anc_12SH_12
