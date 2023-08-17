@@ -36,6 +36,7 @@ b <- ggpairs(lab, title = "B. General Lab Selection Candidates")
 
 #general ethanol
 ethanol <- na.omit(merge(data, general_eth))[,4:6]
+ethanol <- subset(ethanol, ethanol$`C-populations` < 0.1) #remove single outlier that was distorting results
 c <- ggpairs(ethanol, title = "C. General Ethanol Selection Candidates")
 
 #high ethanol specific 
