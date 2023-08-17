@@ -99,6 +99,7 @@ b <- ggcorrplot(corr_lab, digits= 2,method = "square", colors = c("#E46726", "wh
 
 #general ethanol s r2 plot
 ethanol <- na.omit(merge(data, general_eth))[,4:6]
+ethanol <- subset(ethanol, ethanol$`C-populations` < 0.1) #remove single outlier that was distorting results
 corr_ethanol <- cor(ethanol, use = "complete.obs", method = "pearson")
 result_table_ethanol <- data.frame(
   Variable1 = character(),
