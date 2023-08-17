@@ -1,4 +1,4 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Change In SNP Freq/")
+
 library(ggplot2)
 library(ggpubr)
 library(gginference)
@@ -7,11 +7,11 @@ data <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/Prep_q
 
 #All SNP categories
 #read in category lists
-high_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/High_only_sig_snps.txt", header =TRUE,col.names = c("chr","pos"))
-mod_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/Mod_only_sig_snps.txt", header =TRUE,col.names = c("chr","pos"))
-con_only <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/Control_only_sig_snps.txt", header =TRUE,col.names = c("chr","pos"))
-general_lab  <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/Sig_SNPs_Outcrossing.txt", header =TRUE,col.names = c("chr","pos"))
-general_eth <- read.table("~/Dropbox/Ethanol expression project/Genomic_analysis/SNP freq comparisons/Modifed_CMH/Sig_SNPs_Shared_High_Mod_Overlap.txt", header =TRUE,col.names = c("chr","pos"))
+high_only <- read.table("High_only_sig_snps.txt", header =TRUE,col.names = c("chr","pos"))
+mod_only <- read.table("Mod_only_sig_snps.txt", header =TRUE,col.names = c("chr","pos"))
+con_only <- read.table("Control_only_sig_snps.txt", header =TRUE,col.names = c("chr","pos"))
+general_lab  <- read.table("Sig_SNPs_Outcrossing.txt", header =TRUE,col.names = c("chr","pos"))
+general_eth <- read.table("Sig_SNPs_Shared_High_Mod_Overlap.txt", header =TRUE,col.names = c("chr","pos"))
 
 #combined SNP categories for ethanol 
 ethnaol_cands <- rbind(high_only, general_eth)
