@@ -1,4 +1,4 @@
-setwd("~/Dropbox/Ethanol expression project/Genomic_analysis/Haplotypes/")
+
 library(gridExtra)
 library(ggman)
 library(ggpubr)
@@ -9,14 +9,14 @@ library(tidyverse)
 
 ###Control populations
 ## process tables with hap data for C1 and C15
-control_c1 <-  read.table("Control//Control_wk1_haps.txt", header = TRUE)
+control_c1 <-  read.table("Control_wk1_haps.txt", header = TRUE)
 founders <- as.vector(str_split_fixed(control_c1[1,5], ";",12))
 control_c1_freqs <- cbind(control_c1[,1:3],colsplit(control_c1$adjfounderfreqs, ";", founders))
 for (i in 4:ncol(control_c1_freqs)){
   control_c1_freqs <- subset(control_c1_freqs, control_c1_freqs[i] >= 0 & control_c1_freqs[i] <= 1 )
 }
 
-control_c15 <-  read.table("Control//Control_wk15_haps.txt", header = TRUE)
+control_c15 <-  read.table("Control_wk15_haps.txt", header = TRUE)
 founders <- as.vector(str_split_fixed(control_c15[1,5], ";",12))
 control_c15_freqs <- cbind(control_c15[,1:3],colsplit(control_c15$adjfounderfreqs, ";", founders))
 for (i in 4:ncol(control_c15_freqs)){
@@ -62,14 +62,14 @@ p1 <- ggman(control_D, snp = "SNP", bp = "pos", chrom = "chr", ymax = 25, pointS
 
 
 ###Moderate Populations
-moderate_c1 <-  read.table("Moderate/Mod_wk1_haps.txt", header = TRUE)
+moderate_c1 <-  read.table("Mod_wk1_haps.txt", header = TRUE)
 founders <- as.vector(str_split_fixed(moderate_c1[1,5], ";",12))
 moderate_c1_freqs <- cbind(moderate_c1[,1:3],colsplit(moderate_c1$adjfounderfreqs, ";", founders))
 for (i in 4:ncol(moderate_c1_freqs)){
   moderate_c1_freqs <- subset(moderate_c1_freqs, moderate_c1_freqs[i] >= 0 & moderate_c1_freqs[i] <= 1 )
 }
 
-moderate_c15 <-  read.table("Moderate/Mod_wk15_haps.txt", header = TRUE)
+moderate_c15 <-  read.table("Mod_wk15_haps.txt", header = TRUE)
 founders <- as.vector(str_split_fixed(moderate_c15[1,5], ";",12))
 moderate_c15_freqs <- cbind(moderate_c15[,1:3],colsplit(moderate_c15$adjfounderfreqs, ";", founders))
 for (i in 4:ncol(moderate_c15_freqs)){
@@ -115,14 +115,14 @@ p2 <- ggman(moderate_D, snp = "SNP", bp = "pos", chrom = "chr", ymax = 25, point
 
 ###High populations
 ## process tables with hap data for C1 and C15
-high_c1 <-  read.table("High/High_wk1_haps.txt", header = TRUE)
+high_c1 <-  read.table("High_wk1_haps.txt", header = TRUE)
 founders <- as.vector(str_split_fixed(high_c1[1,5], ";",12))
 high_c1_freqs <- cbind(high_c1[,1:3],colsplit(high_c1$adjfounderfreqs, ";", founders))
 for (i in 4:ncol(high_c1_freqs)){
   high_c1_freqs <- subset(high_c1_freqs, high_c1_freqs[i] >= 0 & high_c1_freqs[i] <= 1 )
 }
 
-high_c15 <-  read.table("High/High_wk15_haps.txt", header = TRUE)
+high_c15 <-  read.table("High_wk15_haps.txt", header = TRUE)
 founders <- as.vector(str_split_fixed(high_c15[1,5], ";",12))
 high_c15_freqs <- cbind(high_c15[,1:3],colsplit(high_c15$adjfounderfreqs, ";", founders))
 for (i in 4:ncol(high_c15_freqs)){
