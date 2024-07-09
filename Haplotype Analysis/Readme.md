@@ -1,1 +1,1 @@
-
+Scripts to estiamte and analyze haplotype frequencies. This haplotype estimation approach was devloped by Tony Long (UC Irvine) and his original pipeline can be found here:https://github.com/tdlong/yeast_SNP-HAP.
