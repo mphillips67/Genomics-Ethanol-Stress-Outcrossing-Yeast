@@ -1,1 +1,1 @@
-Scripts to estiamte and analyze haplotype frequencies. This haplotype estimation approach was devloped by Tony Long (UC Irvine) and his original pipeline can be found here:https://github.com/tdlong/yeast_SNP-HAP.
+Scripts to estiamte and analyze haplotype frequencies. Input files are either inlcuded in the directory or can be found in the Dryad directory associated with this project. This haplotype estimation approach was devloped by Tony Long (UC Irvine) and his original pipeline can be found here:https://github.com/tdlong/yeast_SNP-HAP.
